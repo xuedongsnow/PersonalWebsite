@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artist — Snow Xue Dong</title>
+<meta name="description" content="Personal art, animation, and photography by Snow Xue Dong.">
+<meta property="og:title" content="Artist — Snow Xue Dong">
+<meta property="og:description" content="Personal art, animation, and photography by Snow Xue Dong.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <a class="logo" href="index.html"><span class="logo-snow">SNOW</span> <span class="logo-name">Xue Dong</span></a>
+  <nav class="nav">
+    <a class="nav-btn" href="index.html">About</a>
+    <a class="nav-btn" href="work.html">Work</a>
+    <a class="nav-btn" href="artist.html">Artist</a>
+    <a class="nav-btn" href="teacher.html">Teacher</a>
+  </nav>
+</header>
+
+<main>
+      <!-- This is the Artist page. Full guide: README.md -->
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Painting">Painting</button>
+      <button class="filter-btn" data-filter="Animation">Animation</button>
+      <button class="filter-btn" data-filter="Photography">Photography</button>
+    </div>
+
+    <div class="art-grid" id="art-grid">
+      <!-- Each entry uses data-date (YYYY-MM-DD) to sort newest-first and data-category to filter. For a video, set data-id to the YouTube ID. See README.md. -->
+      <article class="art-card reveal" data-date="2024-11-02" data-category="Animation">
+        <div class="yt-embed">
+          <button type="button" class="yt-facade" data-id="XuF981GLDCQ"
+                  aria-label="Play video: A short animation inspired by my life"
+                  style="background-image:url('https://i.ytimg.com/vi/XuF981GLDCQ/hqdefault.jpg')">
+            <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 16 18"><path d="M0 0 L16 9 L0 18 Z" fill="#fff"/></svg></span>
+          </button>
+        </div>
+        <p class="art-desc">A short animation inspired by my life.</p>
+        <div class="art-tags"><span>Nov 2024</span><span>Animation</span></div>
+      </article>
+
+      <article class="art-card reveal" data-date="2024-08-19" data-category="Painting">
+        <div class="ph ph-16x9"><span>Photo</span></div>
+        <p class="art-desc">Acrylic on canvas — a quiet kitchen morning.</p>
+        <div class="art-tags"><span>Aug 2024</span><span>Painting</span></div>
+      </article>
+
+      <article class="art-card reveal" data-date="2024-06-30" data-category="Photography">
+        <div class="ph ph-16x9"><span>Photo</span></div>
+        <p class="art-desc">Street photography from around Somerville.</p>
+        <div class="art-tags"><span>Jun 2024</span><span>Photography</span></div>
+      </article>
+
+      <article class="art-card reveal" data-date="2024-03-11" data-category="Animation">
+        <div class="ph ph-16x9 ph-video"><span>YouTube</span></div>
+        <p class="art-desc">A looping experiment with hand-drawn frames.</p>
+        <div class="art-tags"><span>Mar 2024</span><span>Animation</span></div>
+      </article>
+
+      <article class="art-card reveal" data-date="2023-12-05" data-category="Painting">
+        <div class="ph ph-16x9"><span>Photo</span></div>
+        <p class="art-desc">Watercolor series — winter light.</p>
+        <div class="art-tags"><span>Dec 2023</span><span>Painting</span></div>
+      </article>
+
+      <article class="art-card reveal" data-date="2023-09-22" data-category="Photography">
+        <div class="ph ph-16x9"><span>Photo</span></div>
+        <p class="art-desc">Film photos from a summer road trip.</p>
+        <div class="art-tags"><span>Sep 2023</span><span>Photography</span></div>
+      </article>
+    </div>
+</main>
+
+<footer class="footer">
+  <div class="socials">
+    <a href="#" aria-label="Instagram" title="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="#" aria-label="YouTube" title="YouTube">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.2v5.6l4.8-2.8z" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="#" aria-label="LinkedIn" title="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7" stroke-linecap="round"/></svg>
+    </a>
+    <a href="#" aria-label="Email" title="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <p class="copyright">© 2025 Snow Xue Dong</p>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
