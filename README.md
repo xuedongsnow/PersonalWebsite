@@ -1,6 +1,6 @@
 # xdcreates.com — Snow Xue Dong
 
-Your personal portfolio site. It's plain HTML/CSS/JS with **no build step**, so you can edit everything directly on GitHub's website and it goes live automatically.
+Your personal portfolio site. It's plain HTML/CSS/JS with **no build step**, so you can edit everything directly on GitHub's website and it goes live automatically. 
 
 ## What's in here
 
