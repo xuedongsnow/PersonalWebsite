@@ -194,7 +194,7 @@
   @media (prefers-reduced-motion: reduce){ .lightbox[open]{animation:none;} }
 
   /* ---------- External-link arrow (↗), added by site.js ---------- */
-  .ext-glue{white-space:nowrap;}
+  .ext-glue, .nowrap{white-space:nowrap;}
   .ext-icon{
     display:inline-block; width:.62em; height:.62em; margin-left:.3em; vertical-align:.02em;
     background-color:currentColor;
