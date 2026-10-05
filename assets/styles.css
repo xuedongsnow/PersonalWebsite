@@ -279,6 +279,9 @@
     .about-grid{grid-template-columns:1fr; gap:1.75rem;}
     .work-card{flex-direction:column;}
     .work-media{flex:none; max-width:100%; width:100%;}
+    /* Small screens: project title sits above the image */
+    .work-info{display:contents;}
+    .work-title{order:-1; margin:0 0 -.4rem;}
     .logo{font-size:1.5rem;}
     .nav-btn{padding:.5rem 1.5rem; font-size:1rem;}
     main{padding-top:2rem;}
