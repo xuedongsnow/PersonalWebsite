@@ -106,6 +106,11 @@
   /* Work images sit whole inside a fixed 4:3 frame (no cropping), on a dark green mat */
   .work-media .ph:has(> img){background:var(--green); box-shadow:inset 0 0 0 1px var(--line);}
   .work-media .ph > img{object-fit:contain;}
+  /* Hover (mouse only): frame lifts up-left, revealing a flat yellow offset behind it */
+  @media (hover:hover){
+    .work-media .viewport{transition:transform .2s ease, box-shadow .2s ease;}
+    .work-media .viewport:hover{transform:translate(-4px,-4px); box-shadow:4px 4px 0 var(--yellow);}
+  }
   .work-info{flex:1; min-width:0;}
 
   /* carousel */
