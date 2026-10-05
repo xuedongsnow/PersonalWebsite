@@ -127,6 +127,7 @@
   .spec-row dd{margin:0;}
   .spec-row ul{margin:0; padding-left:1.05rem;}
   .spec-row ul li{margin-bottom:.1rem;}
+  .spec-row dd a{color:var(--green); text-underline-offset:3px;}
 
   .link-btn{
     display:inline-block; font-family:var(--serif); font-size:1rem;
