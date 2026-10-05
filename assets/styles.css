@@ -126,7 +126,7 @@
   .work-title{font-family:var(--serif); font-weight:700; color:var(--green); font-size:1.45rem; line-height:1.2; margin:-.1rem 0 .8rem;}
   .spec{margin:0;}
   .spec-row{display:flex; gap:.6rem; margin-bottom:.5rem;}
-  .spec-row dt{flex:0 0 5rem; font-weight:600; color:var(--muted); margin:0;}
+  .spec-row dt{flex:0 0 5rem; font-weight:700; color:var(--muted); margin:0;}
   .spec-row dd{margin:0;}
   .spec-row ul{margin:0; padding-left:1.05rem;}
   .spec-row ul li{margin-bottom:.1rem;}
