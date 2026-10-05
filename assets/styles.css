@@ -129,7 +129,7 @@
   .dot.active{background:#1B3D2F;}
   .dot:focus-visible{outline:2px solid var(--green); outline-offset:2px;}
   .work-title{font-family:var(--serif); font-weight:700; color:var(--green); font-size:1.45rem; line-height:1.2; margin:-.1rem 0 .8rem;}
-  .spec{margin:0;}
+  .spec{margin:0; line-height:1.25;}
   .spec-row{display:flex; gap:.6rem; margin-bottom:.5rem;}
   .spec-row dt{flex:0 0 5rem; font-weight:700; color:var(--muted); margin:0;}
   .spec-row dd{margin:0;}
