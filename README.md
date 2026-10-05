@@ -38,6 +38,7 @@ Open `work.html`. Each project is one `<article class="work-card"> … </article
 - **To edit:** change the title, client, product list, audience, and link text.
 - **To add:** copy an entire block (from `<article` to `</article>`), paste it, and edit it.
 - **Carousel images:** each project shows a few images. Inside a project you'll see `<div class="slide ph ph-4x3"><span>Photo 1</span></div>`. Replace `<span>Photo 1</span>` with `<img src="images/your-file.jpg" alt="what it shows">`. Add or remove `slide` blocks to change how many images (and add/remove a matching `<button class="dot">` for each).
+- **Enlarged view + caption:** visitors can click any project image to see it enlarged, with arrows to flip through that project's images. To show a line of description under the enlarged image, add `data-caption="…"` to the `<img>`, e.g. `<img src="images/work/your-file.jpg" alt="what it shows" data-caption="Your description here">`. Without it, the `alt` text is shown instead.
 
 ### Add art or a video (Artist)
 Open `artist.html`. Each item is one `<article class="art-card"> … </article>` block with two settings on it:
