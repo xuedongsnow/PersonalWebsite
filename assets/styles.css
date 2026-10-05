@@ -283,7 +283,9 @@
     .work-info{display:contents;}
     .work-title{order:-1; margin:0 0 -.4rem;}
     .logo{font-size:1.5rem;}
-    .nav-btn{padding:.5rem 1.5rem; font-size:1rem;}
+    /* Small screens: keep all four nav buttons on one row, sharing the width equally */
+    nav.nav{flex-wrap:nowrap; gap:.45rem;}
+    .nav-btn{flex:1 1 0; min-width:0; max-width:8.5rem; text-align:center; padding:.5rem .3rem; font-size:clamp(.9rem, 4.2vw, 1rem); white-space:nowrap;}
     main{padding-top:2rem;}
   }
 
