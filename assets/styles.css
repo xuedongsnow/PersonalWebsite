@@ -97,15 +97,44 @@
   .about-bio em{font-style:italic;}
   .linkedin-wrap{max-width:560px; margin:2.75rem auto 0;}
 
-  /* ---------- Work (smart grid) ---------- */
-  .work-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(min(100%,440px), 1fr));
-    gap:2.4rem 2.6rem;
+  /* ---------- Work: one project per row (image | details), "See more" panel below ---------- */
+  .work-grid{display:flex; flex-direction:column; gap:3.5rem;}
+  .work-card{display:grid; grid-template-columns:minmax(0, 460px) minmax(0, 1fr); column-gap:3rem; align-items:start;}
+  .work-media{align-self:stretch; display:flex; flex-direction:column; align-items:center;}
+  .work-media .carousel{margin-bottom:1rem;}   /* space between the image/nav and "See more" */
+  .work-info{display:flex; flex-direction:column; align-items:flex-start; min-width:0;}
+  .work-links{display:flex; flex-wrap:wrap; gap:.75rem 1.1rem; margin:1.1rem 0 0;}
+  .work-links:empty{display:none;}
+
+  /* "See more" toggle: yellow pill, flips colors on hover; open = green tab with square bottom corners */
+  .more-btn{
+    margin-top:auto; align-self:flex-start; position:relative; z-index:1;   /* sits under the image, left-aligned; drops to the row's bottom if the details run taller */
+    display:inline-flex; align-items:center; gap:.55rem;
+    font-family:var(--serif); font-size:1.15rem; line-height:1;
+    background:var(--yellow); color:var(--green); border:none; cursor:pointer;
+    border-radius:999px; padding:.7rem 1.5rem;
+    transition:background .18s ease, color .18s ease, border-radius .18s ease, scale .12s ease;
   }
-  .work-card{display:flex; gap:1.4rem; align-items:flex-start;}
-  .work-media{flex:0 0 42%; max-width:220px; display:flex; flex-direction:column; align-items:center;}
-  .work-media .link-btn{margin-top:.7rem;}
+  .more-tri{width:11px; height:13px; fill:currentColor; transition:transform .2s ease;}
+  .more-btn:hover, .more-btn[aria-expanded="true"]{background:var(--green); color:var(--yellow);}
+  .more-btn[aria-expanded="true"]{border-radius:1.4rem 1.4rem 0 0; margin-bottom:-8px;}   /* panel tucks ~5px under the tab */
+  .more-btn[aria-expanded="true"] .more-tri{transform:rotate(90deg);}
+  .more-btn:active{scale:.94;}
+  .more-btn[aria-expanded="true"]:active{scale:1;}
+  .more-btn:focus-visible{outline:3px solid var(--green); outline-offset:3px;}
+
+  /* Expanded panel: pale yellow, dotted dark-green border, spans the whole card */
+  .work-more{
+    grid-column:1 / -1;
+    background:#FCF0C8; border:3px dotted var(--green); border-radius:calc(var(--radius) + 4px);
+    padding:1.8rem 2.2rem 1.4rem; color:var(--green);
+  }
+  .work-more[hidden]{display:none;}
+  .work-more p{margin:0 0 1.1rem; line-height:1.55;}
+  .spec-more{margin-top:1.4rem;}
+  .work-more p + .spec-more, .work-more > .spec-more:first-child{margin-top:.2rem;}
+  .spec-more .spec-row{margin-bottom:.8rem;}
+  .spec-more .spec-row dt{flex:0 0 8.5rem; color:var(--green);}
   /* Work images sit whole inside a fixed 4:3 frame (no cropping), on a soft beige mat */
   .work-media .ph:has(> img){background:var(--mat); box-shadow:inset 0 0 0 1px var(--line);}
   .work-media .ph > img{object-fit:contain;}
@@ -114,7 +143,6 @@
     .work-media .viewport{transition:transform .2s ease, box-shadow .2s ease;}
     .work-media .viewport:hover{transform:translate(-4px,-4px); box-shadow:4px 4px 0 var(--yellow);}
   }
-  .work-info{flex:1; min-width:0;}
 
   /* carousel */
   .carousel{width:100%;}
@@ -132,6 +160,7 @@
   .dot.active{background:#1B3D2F;}
   .dot:focus-visible{outline:2px solid var(--green); outline-offset:2px;}
   .work-title{font-family:var(--serif); font-weight:700; color:var(--green); font-size:1.45rem; line-height:1.2; margin:-.1rem 0 .8rem;}
+  .work-summary{font-family:var(--serif); font-style:italic; font-size:21px; line-height:1.15; color:var(--ink); margin:-.2rem 0 .9rem; text-align:left;}
   .spec{margin:0; line-height:1.25;}
   .spec-row{display:flex; gap:.6rem; margin-bottom:.5rem;}
   .spec-row dt{flex:0 0 5rem; font-family:var(--sans); font-weight:700; color:var(--muted); margin:0;}
@@ -280,11 +309,18 @@
   @media (max-width:720px){
     body{font-size:16px;}
     .about-grid{grid-template-columns:1fr; gap:1.75rem;}
-    .work-card{flex-direction:column;}
-    .work-media{flex:none; max-width:100%; width:100%;}
-    /* Small screens: project title sits above the image */
+    /* Small screens: stack everything; project title sits above the image */
+    .work-card{display:flex; flex-direction:column; gap:1rem;}
+    .work-media{display:contents;}
+    .work-media .carousel{margin-bottom:0;}
     .work-info{display:contents;}
-    .work-title{order:-1; margin:0 0 -.4rem;}
+    .work-title{order:-1; margin:0 0 -.2rem;}
+    .work-summary{order:-1; margin:0 0 .2rem;}
+    .work-links{margin:.2rem 0 .3rem;}
+    .more-btn{margin-top:0; order:1;}
+    .work-more{order:2;}
+    .work-more{padding:1.4rem 1.2rem 1rem; margin-top:-1rem;}
+    .spec-more .spec-row dt{flex-basis:6.5rem;}
     .logo{font-size:1.5rem;}
     /* Small screens: keep all four nav buttons on one row, sharing the width equally */
     nav.nav{flex-wrap:nowrap; gap:.45rem;}

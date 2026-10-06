@@ -94,6 +94,19 @@
     show(0);
   });
 
+  // ---- Work: "See more" / "See less" toggles each project's details panel --
+  Array.prototype.slice.call(document.querySelectorAll('.more-btn')).forEach(function(btn){
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    var label = btn.querySelector('.more-label');
+    if (!panel) return;
+    btn.addEventListener('click', function(){
+      var open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.hidden = !open;
+      if (label) label.textContent = open ? 'See less' : 'See more';
+    });
+  });
+
   // ---- Work: click an image to view it enlarged (lightbox) -----------------
   // Caption comes from the image's data-caption="…" (falls back to its alt text).
   var lbImgs = Array.prototype.slice.call(document.querySelectorAll('.work-media .slide img'));
