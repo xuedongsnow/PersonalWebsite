@@ -1,6 +1,7 @@
 /* Snow Xue Dong — site styles. Colors & fonts live in the :root block at the top. */
 :root{
     --bg:#FDF9F0;
+    --mat:#F2ECDF;   /* fills the space around images that aren't 4:3 */
     --green:#1B3D2F;
     --ink:#000000;
     --yellow:#F5D44E;
@@ -105,8 +106,8 @@
   .work-card{display:flex; gap:1.4rem; align-items:flex-start;}
   .work-media{flex:0 0 42%; max-width:220px; display:flex; flex-direction:column; align-items:center;}
   .work-media .link-btn{margin-top:.7rem;}
-  /* Work images sit whole inside a fixed 4:3 frame (no cropping), on a dark green mat */
-  .work-media .ph:has(> img){background:var(--green); box-shadow:inset 0 0 0 1px var(--line);}
+  /* Work images sit whole inside a fixed 4:3 frame (no cropping), on a soft beige mat */
+  .work-media .ph:has(> img){background:var(--mat); box-shadow:inset 0 0 0 1px var(--line);}
   .work-media .ph > img{object-fit:contain;}
   /* Hover (mouse only): frame lifts up-left, revealing a flat yellow offset behind it */
   @media (hover:hover){
