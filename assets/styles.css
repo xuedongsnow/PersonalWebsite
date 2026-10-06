@@ -12,6 +12,7 @@
     --sans:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     --body:'Hanken Grotesk', system-ui, -apple-system, sans-serif;
     --maxw:1080px;
+    --radius:12px;   /* rounded corners on every image frame */
   }
 
   *{box-sizing:border-box;}
@@ -78,7 +79,7 @@
     display:flex; align-items:center; justify-content:center;
     color:var(--placeholder-label);
     font-family:var(--serif); font-size:1.15rem; letter-spacing:.02em;
-    border-radius:3px; width:100%;
+    border-radius:var(--radius); width:100%;
   }
   .ph-3x2{aspect-ratio:3/2;}
   .ph-4x3{aspect-ratio:4/3;}
@@ -116,7 +117,7 @@
 
   /* carousel */
   .carousel{width:100%;}
-  .viewport{overflow:hidden; border-radius:3px;}
+  .viewport{overflow:hidden; border-radius:var(--radius);}
   .track{display:flex; transition:transform .35s ease;}
   .slide{flex:0 0 100%;}
   .carousel-controls{display:flex; align-items:center; justify-content:center; gap:.7rem; margin-top:.6rem;}
@@ -172,7 +173,7 @@
   .lightbox::backdrop{background:rgba(16,36,28,.88);}
   @keyframes lb-in{from{opacity:0;} to{opacity:1;}}
   .lb-figure{margin:0; display:flex; flex-direction:column; align-items:center; max-width:min(1100px, 82vw);}
-  .lb-img{display:block; max-width:100%; max-height:76vh; max-height:76dvh; object-fit:contain; border-radius:3px; background:var(--green);}
+  .lb-img{display:block; max-width:100%; max-height:76vh; max-height:76dvh; object-fit:contain; border-radius:var(--radius); background:var(--green);}
   .lb-caption{color:var(--bg); font-size:1rem; line-height:1.5; text-align:center; margin-top:.9rem; max-width:60ch;}
   .lb-caption:empty{display:none;}
   .lb-count{color:var(--bg); opacity:.6; font-size:.85rem; margin:.35rem 0 0;}
@@ -231,7 +232,7 @@
   .art-desc{margin:.85rem 0 .55rem; background:#F0EBDD; padding:.7rem .85rem; border-radius:3px; font-size:.98rem;}
   .art-tags{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:auto;}
   .art-tags span{font-size:.8rem; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:.12rem .7rem;}
-  .yt-embed{position:relative; aspect-ratio:16/9; border-radius:3px; overflow:hidden; background:#000;}
+  .yt-embed{position:relative; aspect-ratio:16/9; border-radius:var(--radius); overflow:hidden; background:#000;}
   .yt-embed iframe{position:absolute; inset:0; width:100%; height:100%; display:block; border:0;}
   .yt-facade{
     position:absolute; inset:0; width:100%; height:100%; padding:0; border:0; cursor:pointer;
