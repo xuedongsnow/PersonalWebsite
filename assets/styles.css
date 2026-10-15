@@ -135,6 +135,25 @@
   .work-more p + .spec-more, .work-more > .spec-more:first-child{margin-top:.2rem;}
   .spec-more .spec-row{margin-bottom:.8rem;}
   .spec-more .spec-row dt{flex:0 0 8.5rem; color:var(--green);}
+
+  /* "My thoughts": right-aligned outline pill inside the panel; opens a lighter yellow box */
+  .thoughts{display:flex; flex-direction:column; margin-top:.4rem;}
+  .thoughts-btn{
+    align-self:flex-end; margin-right:3.5rem; display:inline-flex; align-items:center; gap:.5rem;
+    position:relative; z-index:1;
+    font-family:var(--serif); font-size:1.1rem; line-height:1;
+    background:var(--bg); color:var(--green); border:1.5px solid var(--green); border-radius:999px;
+    padding:.5rem 1.2rem; cursor:pointer;
+    transition:background .18s ease, color .18s ease, scale .12s ease;
+  }
+  .thoughts-btn:hover, .thoughts-btn[aria-expanded="true"]{background:var(--green); color:var(--yellow);}
+  .thoughts-btn[aria-expanded="true"] .more-tri{transform:rotate(-90deg);}   /* ◀ turns to point down when open */
+  .thoughts-btn:active{scale:.94;}
+  .thoughts-btn:focus-visible{outline:3px solid var(--green); outline-offset:3px;}
+  .thoughts-body{background:#275844; color:#fff; font-style:italic; border-radius:34px; padding:3rem 1.8rem 3.3rem; margin:-1.5rem 3.5rem 3.5rem;}   /* pulled up so the button overlaps its top edge */
+  .thoughts-body[hidden]{display:none;}
+  .thoughts-body p{margin:0 0 .8rem;}
+  .thoughts-body p:last-child{margin-bottom:0;}
   /* Work images sit whole inside a fixed 4:3 frame (no cropping), on a soft beige mat */
   .work-media .ph:has(> img){background:var(--mat); box-shadow:inset 0 0 0 1px var(--line);}
   .work-media .ph > img{object-fit:contain;}
@@ -321,6 +340,8 @@
     .work-more{order:2;}
     .work-more{padding:1.4rem 1.2rem 1rem; margin-top:-1rem;}
     .spec-more .spec-row dt{flex-basis:6.5rem;}
+    .thoughts-body{margin-left:.6rem; margin-right:.6rem; padding:1.9rem 1.2rem 1.1rem;}
+    .thoughts-btn{margin-right:1.4rem;}
     .logo{font-size:1.5rem;}
     /* Small screens: keep all four nav buttons on one row, sharing the width equally */
     nav.nav{flex-wrap:nowrap; gap:.45rem;}

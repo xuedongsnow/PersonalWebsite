@@ -107,6 +107,17 @@
     });
   });
 
+  // ---- Work: "My thoughts" toggles inside each panel -----------------------
+  Array.prototype.slice.call(document.querySelectorAll('.thoughts-btn')).forEach(function(btn){
+    var body = document.getElementById(btn.getAttribute('aria-controls'));
+    if (!body) return;
+    btn.addEventListener('click', function(){
+      var open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      body.hidden = !open;
+    });
+  });
+
   // ---- Work: click an image to view it enlarged (lightbox) -----------------
   // Caption comes from the image's data-caption="…" (falls back to its alt text).
   var lbImgs = Array.prototype.slice.call(document.querySelectorAll('.work-media .slide img'));
