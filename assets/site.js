@@ -51,7 +51,7 @@
 
   // ---- External links: add a ↗ arrow + "(opens in a new tab)" for screen readers
   // Applies to link buttons and project-detail links that have target="_blank".
-  Array.prototype.slice.call(document.querySelectorAll('.link-btn[target="_blank"], .spec-row a[target="_blank"]')).forEach(function(a){
+  Array.prototype.slice.call(document.querySelectorAll('.link-btn[target="_blank"], .spec-row a[target="_blank"], .thoughts-body a[target="_blank"]')).forEach(function(a){
     var last = a.lastChild;
     var icon = document.createElement('span');
     icon.className = 'ext-icon';
